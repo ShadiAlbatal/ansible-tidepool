@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+  - include_tasks: develop.yml
+#  - include_tasks: docker.yml
+  - include_tasks: helm.yml
+  - include_tasks: tilt.yml
+  - include_tasks: kubectl.yml
+      # include_tasks: C:/Users/shadi/Downloads/proj/packer/provisioners/ansible/helm.yml/app.yml
