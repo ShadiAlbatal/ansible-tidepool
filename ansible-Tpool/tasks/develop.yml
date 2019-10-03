@@ -1,0 +1,17 @@
+---
+  # create tidePool directory 
+  - name: create tilt directory 
+    file:
+      path:  /home/ubuntu/tidePool
+      state: directory
+
+
+  # Download TidePool
+  - name: download the tidePool
+    become: true
+    git:
+      repo: https://github.com/tidepool-org/development.git 
+      dest: /home/ubuntu/tidePool/
+      clone: yes
+
+

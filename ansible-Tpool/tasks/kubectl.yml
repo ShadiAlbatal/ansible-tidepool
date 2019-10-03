@@ -1,0 +1,18 @@
+---
+
+# download kubectl
+  - name: Install kubectl
+    become: true
+    get_url:
+      url:  https://storage.googleapis.com/kubernetes-release/release/v1.15.1/bin/linux/amd64/kubectl
+      dest: /home/ubuntu/kubectl
+      mode: a+x
+       
+# move kubectl to /usr/local/bin/kubectl
+  - name: move kubectl to /usr/local/bin/kubectl
+    become: yes
+    copy: 
+      src: /home/ubuntu/kubectl
+      dest: /usr/local/bin/kubectl
+      mode: a+x
+
